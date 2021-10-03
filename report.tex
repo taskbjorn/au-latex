@@ -1,0 +1,82 @@
+\documentclass[hidelinks, 12pt]{article}
+
+%% ----------- BEGIN VARIABLES ----------- %%
+
+% Set course name
+\newcommand{\aucoursename}{Course Name}
+
+% Set report title
+\newcommand{\aureporttitle}{Report Title}
+
+% Set student names
+\newcommand{\austudentslist}{%
+    Student Name 1 \\
+    Student Name 2%
+}
+
+% Set supervisor names
+\newcommand{\ausupervisorslist}{%
+    Supervisor Name 1 \\
+    Supervisor Name 2%
+}
+
+% Set faculty name
+\newcommand{\aufacultyname}{Faculty Name}
+
+% Set department name
+\newcommand{\audepartmentname}{Department Name}
+%% ----------------- %%
+
+%% ----------- END VARIABLES ----------- %%
+
+% Include template preamble
+\input{template/preamble}
+
+\begin{document}
+
+% Omit header and footer for titlepage, table of contents, list of symbols
+\pagestyle{plain}
+
+% Use capital roman numbering for titlepage, table of contents, list of symbols
+\pagenumbering{Roman}
+
+% Title page
+\autitlepage
+
+% Table of Contents
+\autableofcontents
+
+% List of Symbols
+\aulistofsymbols
+
+\pagestyle{fancy}
+\pagenumbering{arabic}
+
+%% ----------- BEGIN CONTENT ----------- %%
+
+\ausection{01-a-section}
+
+\ausection{02-yet-another-section}
+
+%% ----------- END CONTENT ----------- %%
+
+% Omit header and footer for bibliography and lists
+\pagestyle{plain}
+
+% Use lowercase roman numbering for bibliography and lists
+\pagenumbering{roman}
+
+% Bibliography
+\aubibliography
+
+% List of Figures
+\aulistoffigures
+
+% List of Tables
+\aulistoftables
+
+% List of Codes
+\aulistoflistings
+
+\end{document}
+½

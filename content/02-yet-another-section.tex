@@ -1,0 +1,44 @@
+\section{Another section}
+
+This is another section. This section includes an equation.
+
+$$
+F(t) = F_0 e^{i (\omega t + \phi)}
+$$
+
+\subsection{Another subsection}
+
+This is another subsection. This subsection includes a code listing and output from a console.
+
+\lstinputlisting[
+label = example-listing,
+language = Python,
+caption = Just some Python code
+]{listing.py}
+
+Console output can be coloured using delimiters:
+
+\begin{lstlisting}[
+   language = bash,
+   style = console-output,
+]
+STARTBCHelloENDBC, STARTRCWorldENDRCSTARTGC!ENDGC
+\end{lstlisting}
+
+\subsection{Yet another subsection}
+This is yet another subsection. This subsection includes a table.
+
+\begin{table}[ht]
+    \centering
+	\begin{tabular}{@{}llr@{}} \toprule
+		\multicolumn{2}{c}{Item} \\ \cmidrule(r){1-2}
+		Animal & Description & Price (\$)\\ \midrule
+		Gnat & per gram & 13.65 \\
+		& each & 0.01 \\
+		Gnu & stuffed & 92.50 \\
+		Emu & stuffed & 33.33 \\
+		Armadillo & frozen & 8.99 \\ \bottomrule
+	\end{tabular}
+    \caption{An example table}
+    \label{example-table}
+\end{table}

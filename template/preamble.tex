@@ -1,0 +1,267 @@
+% adjustbox package, used to wrap images in a frame
+\usepackage[export]{adjustbox}
+
+% amsmath package, used to improve typesetting of mathematical formulae
+\usepackage{amsmath}
+
+% babel package, used to manage cultural typographical rules
+\usepackage[english]{babel}
+
+% biblatex package, used for the bibliography
+\usepackage[backend=biber, style=authoryear-comp]{biblatex}
+
+% booktabs package, used to better style tables
+\usepackage{booktabs}
+
+% cancel package, used to cancel terms in equations
+\usepackage[makeroom]{cancel}
+
+% inputenc package, used to specify text file encoding. Must be loaded before the csquotes package!
+\usepackage[utf8]{inputenc}
+
+% csquotes package, used to display quotation and for the bibliography
+\usepackage{csquotes}
+
+% diffcoeff package, provides useful options for writing differentials
+\usepackage{diffcoeff}
+
+% enumiten package, provides more spacing options for lists
+\usepackage{enumitem}
+
+% fancyhdr package, used to include a custom header and footer
+\usepackage{fancyhdr}
+
+% graphicx package, used to include pictures
+\usepackage{graphicx}
+
+% listings package, used to include styled and highlighted code snippets
+\usepackage{listings}
+
+% longtable package, used to style larger tables
+\usepackage{longtable}
+
+% mdframed package, used to wrap quotes in a box
+\usepackage[framemethod=TikZ]{mdframed}
+
+% microtype package, used to fix spacing overflow warnings in the bibliography
+\usepackage[final]{microtype}
+
+% nomencl package, used to include a nomenclature page
+\usepackage{nomencl}
+
+% ntheorem package, used to include theorems
+\usepackage{ntheorem}
+
+% pdfpages package, used to include external PDF files as pages
+\usepackage{pdfpages}
+
+% quoting package, used to better style quotes
+\usepackage{quoting}
+
+% ragged2e package, used to justify text in an environment
+\usepackage{ragged2e}
+
+% siunitx package, used to include SI units in text and math formulae
+\usepackage{siunitx}
+
+% tabularx package, used to style tables with variable column width
+\usepackage{tabularx}
+
+% titlesec package, used to change headings style and colour
+\usepackage[sf]{titlesec}
+
+% url package, used to better format URLs
+\usepackage{url}
+
+% xcolor package, used to include template colours
+\usepackage{xcolor}
+
+% hyperref package, used to provide bookmarks in the exported PDF file (load last according to docs)
+%\usepackage{hyperref}
+
+% bookmark package, used to improve the bookmarks outline for the hyperref package (load after hyperref)
+\usepackage{bookmark}
+
+% geometry package used to change paper size and margins (load after hyperref)
+\usepackage{geometry}
+
+% Set paper size and margins
+\geometry{%
+   a4paper,%
+   top    = 25mm,%
+   bottom = 25mm,%
+   left   = 15mm,%
+   right  = 15mm,%
+}
+
+% Set spacing between paragraphs
+\setlength{\parskip}{0.25em}
+
+% Remove paragraph indentation
+\setlength{\parindent}{0cm}
+
+% Define AU template colours
+\definecolor{au-blue}{HTML}{003d73}        % AU Blue
+\definecolor{au-darkblue}{HTML}{002546}    % AU Dark Blue
+\definecolor{au-lilla}{HTML}{655a9f}       % AU Lilla
+\definecolor{au-darklilla}{HTML}{281c41}   % AU Dark Lilla
+\definecolor{au-cyan}{HTML}{37a0cb}        % AU Cyan
+\definecolor{au-darkcyan}{HTML}{003e5c}    % AU Dark Cyan
+\definecolor{au-turkish}{HTML}{00aba4}     % AU Turkish
+\definecolor{au-darkturkish}{HTML}{004543} % AU Dark Turkish
+\definecolor{au-green}{HTML}{8bad3f}       % AU Green
+\definecolor{au-darkgreen}{HTML}{425821}   % AU Dark Green
+\definecolor{au-gold}{HTML}{fabb00}        % AU Gold
+\definecolor{au-darkgold}{HTML}{634b03}    % AU Dark Gold
+\definecolor{au-orange}{HTML}{ee7f00}      % AU Orange
+\definecolor{au-darkorange}{HTML}{5f3408}  % AU Dark Orange
+\definecolor{au-red}{HTML}{e2001a}         % AU Red
+\definecolor{au-darkred}{HTML}{5b0c0c}     % AU Dark Red
+\definecolor{au-magenta}{HTML}{e2007a}     % AU Magenta
+\definecolor{au-darkmagenta}{HTML}{5f0030} % AU Dark Magenta
+\definecolor{au-gray}{HTML}{878787}        % AU Gray
+\definecolor{au-darkgray}{HTML}{4b4b4a}    % AU Dark Gray
+\definecolor{codebackground}{HTML}{f7f7f4} % Custom Gray (Listings background)
+
+% Set section title colour
+\titleformat*{\section}{\normalfont \Large \bfseries \color{au-blue}}
+
+% Set subsection title colour
+\titleformat*{\subsection}{\normalfont \large \bfseries \color{au-darkblue}}
+
+% Define default header and footer style
+\fancypagestyle{fancy}{%
+   \fancyhead{}
+   \fancyfoot{}
+   \fancyhead[R]{\slshape \leftmark}
+   \fancyfoot[R]{\thepage}
+   \fancyfoot[L]{\aucoursename: \aureporttitle}
+   \renewcommand{\headrulewidth}{1pt}
+   \renewcommand{\headrule}{\hbox to \headwidth{\color{au-blue}\leaders \hrule height \footrulewidth \hfill}}
+   \renewcommand{\footrulewidth}{1pt}
+   \renewcommand{\footrule}{\hbox to \headwidth{\color{au-blue}\leaders \hrule height \footrulewidth \hfill}}
+   \setlength{\headheight}{25pt}
+}
+
+% Define plain (no section/subsection) header and footer style
+\fancypagestyle{plain}{%
+   \fancyhead{}
+   \fancyfoot{}
+   \renewcommand{\headrulewidth}{0pt}
+   \renewcommand{\footrulewidth}{0pt}
+}
+
+% Set default header and footer style
+\pagestyle{fancy}
+
+% Change equation number to follow sections
+\numberwithin{equation}{section}
+
+% Define AU listing style
+\lstdefinestyle{au}{%
+   backgroundcolor   = \color{codebackground},
+   commentstyle      = \color{au-cyan},
+   keywordstyle      = \color{au-blue},
+   numberstyle       = \tiny \color{au-gray},
+   stringstyle       = \color{au-lilla},
+   basicstyle        = \ttfamily \footnotesize,
+   breakatwhitespace = false,
+   breaklines        = true,
+   captionpos        = b,
+   keepspaces        = true,
+   numbers           = left,
+   numbersep         = 10pt,
+   showspaces        = false,
+   showstringspaces  = false,
+   showtabs          = false,
+   tabsize           = 3,
+   framesep          = 5pt,
+   frame             = single,
+   rulecolor         = \color{codebackground}
+}
+
+\lstdefinestyle{console-output}{%
+   backgroundcolor   = \color{white},
+   commentstyle      = \color{au-cyan},
+   keywordstyle      = \color{au-blue},
+   numberstyle       = \tiny \color{au-gray},
+   stringstyle       = \color{au-lilla},
+   basicstyle        = \ttfamily \footnotesize,
+   breaklines        = true,
+   breakatwhitespace = false,
+   captionpos        = b,
+   keepspaces        = true,
+   numbers           = none,
+   numbersep         = 10pt,
+   showspaces        = false,
+   showstringspaces  = false,
+   showtabs          = false,
+   tabsize           = 3,
+   framesep          = 5pt,
+   frame             = single,
+   rulecolor         = \color{white},
+   moredelim         = **[is][\color{au-red}]{STARTRC}{ENDRC},
+   moredelim         = **[is][\color{au-blue}]{STARTBC}{ENDBC},
+   moredelim         = **[is][\color{au-green}]{STARTGC}{ENDGC}
+}
+
+% Redefine list of listings header
+\renewcommand{\lstlistlistingname}{List of Codes}
+
+% Fix for special characters in listings
+\lstset{literate = {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1 {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1 {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1 {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1 {ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1 {Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1 {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1 {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1 {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1 {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1 {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1}
+
+% Set default listing style
+\lstset{style = au}
+
+% Set section counter to section depth level
+\setcounter{secnumdepth}{1}
+
+% Redefine table of contents header
+\addto \captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+
+% Redefine nomenclature header
+\renewcommand{\nomname}{List of Symbols}
+
+% Set root path for graphics assets
+\graphicspath{{assets/graphics}}
+
+% Set root path for listings assets
+\newcommand*\lstpath[1]{\lstset{inputpath=#1}}
+\lstpath{assets/listings}
+
+% Set path for bibliography
+\addbibresource{bibliography.bib}
+
+% Set bibliography reference separator
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+% Set bibliography entry spacing
+\setlength{\bibitemsep}{\baselineskip}
+
+% Define text superscript shortcut
+\newcommand{\ts}{\textsuperscript}
+
+% Define include section shortcut
+\def\ausection#1{\input{content/#1}\clearpage}
+
+% Define titlepage shortcut
+\def\autitlepage{\pdfbookmark[1]{Title page}{titlepage}\include{template/titlepage}\clearpage}
+
+% Define table of contents shortcut
+\def\autableofcontents{\pdfbookmark[1]{Table of Contents}{toc}\tableofcontents\clearpage}
+
+% Define list of symbols shortcut
+\def\aulistofsymbols{\pdfbookmark[1]{List of Symbols}{toc}\input{content/00-list-of-symbols}\printnomenclature\clearpage}
+
+% Define bibliography shortcut
+\def\aubibliography{\phantomsection\addcontentsline{toc}{section}{Bibliography}\printbibliography[title = Bibliography]\clearpage}
+
+% Define list of figures shortcut
+\def\aulistoffigures{\phantomsection\addcontentsline{toc}{section}{List of Figure}\listoffigures}
+
+% Define list of tables shortcut
+\def\aulistoftables{\phantomsection\addcontentsline{toc}{section}{List of Tables}\listoftables}
+
+% Define list of listings shortcut
+\def\aulistoflistings{\phantomsection\addcontentsline{toc}{section}{List of Codes}\lstlistoflistings}
